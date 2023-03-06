@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getPokemonList } from '../../services/api-calls'
-
+import { Link } from 'react-router-dom'
 
 const PokeList = () => {
   const [pokeList, setPokeList] = useState([])
@@ -21,11 +21,12 @@ const PokeList = () => {
       {pokeList.length ?
         <>
           {pokeList.map(poke =>
-            <div key={poke.id}>
+            <div key={poke.url}>
+              <Link to='/details' state={{poke}} key={poke.name}> 
               {poke.name}
+              </Link>
             </div>
           )}
-
         </>
         :
         <>
@@ -34,10 +35,6 @@ const PokeList = () => {
       }
     </>
   );
-
-
-
-
 }
 
 
