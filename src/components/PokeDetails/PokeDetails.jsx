@@ -20,18 +20,22 @@ const PokeDetails = () => {
   return (
     <>
       <h4>Get to know this Pokemon</h4>
-      <div>
+      <div className="pokeCard">
         <h4>Name: {pokePage.name}</h4>
         <h4>Height: {pokePage.height}</h4>
         <h4>Weight: {pokePage.weight}</h4>
+        <h4>Species: {pokePage.species.name}</h4>
         <img src={pokePage.sprites?.front_default} alt="" />
         <>
         <h4>This Pokemon can do these moves:</h4>
+        <div className="moves">
         {pokePage.moves?.map(move => 
           <li>{move.move.name}</li>
-        )}
+          )}
+        </div>
         </>
-        <Link to='/poke' className="links">Return to the Pokemon List Page</Link>
+      
+        <Link to='/' className="links">Return to the Pokemon List Page</Link>
       </div>
     </>
   )

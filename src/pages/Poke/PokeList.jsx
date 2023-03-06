@@ -22,7 +22,7 @@ const PokeList = () => {
         <>
           {pokeList.map(poke =>
             <div key={poke.url}>
-              <Link to='/details' state={{poke}} key={poke.name}> 
+              <Link to='/details' state={{poke}} key={poke.name} className="links"> 
               {poke.name}
               </Link>
             </div>

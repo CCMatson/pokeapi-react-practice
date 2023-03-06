@@ -13,3 +13,28 @@ header {
   font-size: 24px;
   padding: 10px;
 }
+
+.links {
+  text-decoration: none;
+  font-size: 24px;
+  color: blue;
+}
+
+.links:hover {
+  text-decoration: none;
+  font-size: 24px;
+  color: red;
+}
+
+.pokeCard {
+  border: black 2px solid;
+}
+
+.moves{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li{
+font-size: 24;
+}
