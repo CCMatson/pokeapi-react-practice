@@ -24,8 +24,9 @@ const PokeDetails = () => {
         <h4>Name: {pokePage.name}</h4>
         <h4>Height: {pokePage.height}</h4>
         <h4>Weight: {pokePage.weight}</h4>
-        <h4>Species: {pokePage.species.name}</h4>
+        <h4>Species: {pokePage.species?.name}</h4>
         <img src={pokePage.sprites?.front_default} alt="" />
+        <img src={pokePage.sprites?.back_default} alt="" />
         <>
         <h4>This Pokemon can do these moves:</h4>
         <div className="moves">
