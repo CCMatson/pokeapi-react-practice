@@ -9,3 +9,8 @@ export async function getDetails(apiUrl){
   const res = await fetch(`${apiUrl}`)
   return res.json()
 }
+
+export async function pokeSearch(formData) {
+  const res = await fetch(`${baseUrl}/pokemon/${formData.query}/`)
+  return res.json()
+}
