@@ -4,7 +4,7 @@ const NavBar = () => {
   return (
     <header className="NavBar">
       <Link to="/">PokeList</Link>
-      {/* <Link to="/details">Details</Link> */}
+      <Link to="/poke-search">Search</Link>
     </header>
   );
 };
