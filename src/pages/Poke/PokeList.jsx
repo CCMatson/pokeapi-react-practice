@@ -4,7 +4,6 @@ import { getPokemonList } from '../../services/api-calls'
 import { Link } from 'react-router-dom'
 import RandomPokemon from '../GetRandom/GetRandom'
 
-
 const PokeList = () => {
   const [pokeList, setPokeList] = useState([])
 
