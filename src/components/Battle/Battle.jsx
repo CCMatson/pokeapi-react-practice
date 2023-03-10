@@ -5,10 +5,13 @@ import { getPokemon } from '../../services/api-calls'
 const Battle = (props) => {
   const playerChoiceName = props.pokes.name
   const playerChoiceId = props.pokes.id
+  const playerTwo = (playerChoiceId - 2)
+  const playerThree = (playerChoiceId + 2)
+  console.log(playerTwo, 'playerTwo')
+  console.log(playerThree, 'playerThree')
+  console.log(typeof playerChoiceId, 'idType')
   console.log(props, 'props')
-  console.log(props.pokes.name, 'name')
   console.log(playerChoiceName, 'playerChoice')
-  console.log(props.pokes, 'pokes')
   console.log(playerChoiceId, 'playerChoiceId')
 
   const [ashPokemon, setAshPokemon] = useState(null)
@@ -19,8 +22,8 @@ const Battle = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       const ash = await getPokemon(playerChoiceId)
-      const misty = await getPokemon(6)
-      const brock = await getPokemon(8)
+      const misty = await getPokemon(playerTwo)
+      const brock = await getPokemon(playerThree)
 
       setAshPokemon(ash)
       setMistyPokemon(misty)
