@@ -4,6 +4,7 @@ import NavBar from './components/NavBar/NavBar';
 import PokeList from './pages/Poke/PokeList'
 import PokeDetails from './components/PokeDetails/PokeDetails';
 import PokeSearch from './pages/PokeSearch/PokeSearch';
+import CapturePoke from './components/CapturePoke/CapturePoke';
 
 function App() {
 
@@ -16,7 +17,9 @@ function App() {
         <Route path="/" element={<PokeList />}/>
         <Route path="/details" element={<PokeDetails />}/>
         <Route path="/poke-search" element={<PokeSearch />}/>
+        <Route path="/catch-em" element={<CapturePoke />}/>
         </Routes>
+        
     </div>
   );
 }
