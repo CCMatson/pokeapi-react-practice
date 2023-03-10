@@ -27,6 +27,13 @@ const PokeSearch = () => {
         <h1>Name: {pokes.name}</h1>
         <h4>Base experience: {pokes.base_experience}</h4>
 
+        <h4>Species</h4>
+        <li>{pokes.species?.name} </li>
+        <li>{pokes.species?.url} </li>
+
+        <img src={pokes.sprites?.front_default}alt="" />
+
+
         <h4>Stat Name and Base Stats:</h4>
         {pokes.stats?.map(stat =>
           <li>{stat.stat.name} & {stat.base_stat} </li>)}
@@ -40,14 +47,6 @@ const PokeSearch = () => {
 
 
 
-      {/* <h1>Name : {pokes?.name}</h1>
-    <h1>Firmness : {pokes.firmness?.name}</h1>
-    <h4>This berry has these flavors:</h4>
-  
-    {pokes.flavors?.map(flavor => 
-          <li>{flavor.flavor.name} - {flavor.flavor.url}</li>
-     
-          )} */}
 
 
 

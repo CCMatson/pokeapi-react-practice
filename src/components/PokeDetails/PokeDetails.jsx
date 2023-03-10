@@ -19,7 +19,10 @@ const PokeDetails = () => {
   if (!pokePage) return <p>Loading...</p>
   return (
     <>
-      <h4>Get to know this Pokemon</h4>
+      <h1>Get to know this Pokemon</h1>
+      <section>
+
+
       <div className="pokeCard">
         <h4>Name: {pokePage.name}</h4>
         <h4>Height: {pokePage.height}</h4>
@@ -36,8 +39,9 @@ const PokeDetails = () => {
         </div>
         </>
       
-        <Link to='/' className="links">Return to the Pokemon List Page</Link>
       </div>
+      </section>
+        <Link to='/' className="return">Return to the Pokemon List Page</Link>
     </>
   )
 }
