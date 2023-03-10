@@ -6,6 +6,7 @@ import PokeDetails from './components/PokeDetails/PokeDetails';
 import PokeSearch from './pages/PokeSearch/PokeSearch';
 import CapturePoke from './components/CapturePoke/CapturePoke';
 import GetRandom from './pages/GetRandom/GetRandom'
+import Battle from './components/Battle/Battle';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/poke-search" element={<PokeSearch />}/>
         <Route path="/catch-em" element={<CapturePoke />}/>
         <Route path="/random" element={<GetRandom />}/>
+        <Route path="/battle" element={<Battle />}/>
         </Routes>
         
     </div>

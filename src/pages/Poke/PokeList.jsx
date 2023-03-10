@@ -20,22 +20,22 @@ const PokeList = () => {
 
     <section className="container">
       <h1>Gotta catch them all!</h1>
-   {/* ADD ROUTE AND BUTTON */}
-   <Link to="/random" pokeList={pokeList}>Link</Link>
-      <h1>Get a Random Pokemon<RandomPokemon props={pokeList}/></h1>
+      {/* ADD ROUTE AND BUTTON */}
+      <Link to="/random" pokeList={pokeList}>Link</Link>
+      <h1>Get a Random Pokemon<RandomPokemon props={pokeList} /></h1>
       <h3>This is a list of 100 pokemon</h3>
       {pokeList.length ?
         <>
           {pokeList.map(poke =>
             <div key={poke.url} >
 
-              <Link to='/details' state={{poke}} className="links"> 
-              {poke.name}
-              {poke.id}
+              <Link to='/details' state={{ poke }} className="links">
+                {poke.name}
+                {poke.id}
               </Link>
             </div>
 
-            
+
           )}
         </>
         :
@@ -45,7 +45,7 @@ const PokeList = () => {
       }
 
     </section>
-  
+
 
 
   );
