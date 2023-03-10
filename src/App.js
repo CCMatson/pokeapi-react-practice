@@ -6,6 +6,9 @@ import PokeDetails from './components/PokeDetails/PokeDetails';
 import PokeSearch from './pages/PokeSearch/PokeSearch';
 
 function App() {
+
+
+  
   return (
     <div className="App">
       <NavBar />
