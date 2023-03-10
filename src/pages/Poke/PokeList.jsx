@@ -16,14 +16,16 @@ const PokeList = () => {
 
   return (
     <>
+    <div className="PokeList">
       <h1>Gotta catch them all</h1>
       <h4>This is a list of pokemon</h4>
       {pokeList.length ?
         <>
           {pokeList.map(poke =>
-            <div key={poke.url}>
+            <div>
               <Link to='/details' state={{poke}} className="links"> 
               {poke.name}
+              {poke.id}
               </Link>
             </div>
           )}
@@ -33,6 +35,9 @@ const PokeList = () => {
           <h4>Pokemon are loading</h4>
         </>
       }
+
+
+    </div>
     </>
   );
 }

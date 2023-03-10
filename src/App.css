@@ -14,6 +14,11 @@ header {
   padding: 10px;
 }
 
+.PokeList {
+  display: flex;
+  flex-direction: column;
+}
+
 .links {
   text-decoration: none;
   font-size: 24px;
