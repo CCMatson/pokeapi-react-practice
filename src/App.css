@@ -14,6 +14,7 @@ header {
   padding: 10px;
 }
 
+
 .NavBar{
   background-color: black;
 }
@@ -32,11 +33,17 @@ header {
   padding: 20px;
 }
 
-
 a {
+
+.PokeList {
+  display: flex;
+  flex-direction: column;
+}
+
+.links {
   text-decoration: none;
   font-size: 24px;
- color: black;
+  color: black;
 }
 
 a:hover {
@@ -48,8 +55,8 @@ a:hover {
 .links{
   background-color: beige;
   padding: 5px;
-border-radius: 24px;
-border: 2px solid black;
+  border-radius: 24px;
+  border: 2px solid black;
 }
 
 .container{

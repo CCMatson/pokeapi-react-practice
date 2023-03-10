@@ -17,7 +17,7 @@ const PokeList = () => {
   }, [])
 
   return (
-    <>
+
     <section className="container">
       <h1>Gotta catch them all!</h1>
    {/* ADD ROUTE AND BUTTON */}
@@ -27,8 +27,10 @@ const PokeList = () => {
         <>
           {pokeList.map(poke =>
             <div key={poke.url} >
+
               <Link to='/details' state={{poke}} className="links"> 
               {poke.name}
+              {poke.id}
               </Link>
             </div>
 
@@ -40,8 +42,10 @@ const PokeList = () => {
           <h4>Pokemon are loading</h4>
         </>
       }
+
     </section>
   
+
     </>
   );
 }
