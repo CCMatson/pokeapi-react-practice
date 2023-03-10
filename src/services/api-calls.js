@@ -15,7 +15,7 @@ export async function pokeSearch(formData) {
   return res.json()
 }
 
-export async function getPokemon(name) {
-  const res = await fetch(`${baseUrl}/pokemon/${name}`);
+export async function getPokemon(id) {
+  const res = await fetch(`${baseUrl}/pokemon/${id}`);
   return res.json()
 }

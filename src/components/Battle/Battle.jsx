@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { getPokemon } from '../../services/api-calls'
 
-const Battle = () => {
+
+const Battle = (props) => {
+  const playerChoiceName = props.pokes.name
+  const playerChoiceId = props.pokes.id
+  console.log(props, 'props')
+  console.log(props.pokes.name, 'name')
+  console.log(playerChoiceName, 'playerChoice')
+  console.log(props.pokes, 'pokes')
+  console.log(playerChoiceId, 'playerChoiceId')
+
   const [ashPokemon, setAshPokemon] = useState(null)
   const [mistyPokemon, setMistyPokemon] = useState(null)
   const [brockPokemon, setBrockPokemon] = useState(null)
@@ -9,16 +18,16 @@ const Battle = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const ash = await getPokemon('pikachu')
-      const misty = await getPokemon('ditto')
-      const brock = await getPokemon('psyduck')
+      const ash = await getPokemon(playerChoiceId)
+      const misty = await getPokemon(6)
+      const brock = await getPokemon(8)
 
       setAshPokemon(ash)
       setMistyPokemon(misty)
       setBrockPokemon(brock)
     }
     fetchData()
-  }, [])
+  }, [playerChoiceId])
 
   useEffect(() => {
     if (ashPokemon && mistyPokemon && brockPokemon) {

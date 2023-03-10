@@ -11,7 +11,6 @@ const PokeList = () => {
     const fetchPokemonList = async () => {
       const pokeData = await getPokemonList()
       setPokeList(pokeData.results)
-      console.log(pokeData.results)
     }
     fetchPokemonList()
   }, [])

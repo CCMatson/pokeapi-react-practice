@@ -1,17 +1,15 @@
 import { useState } from 'react'
 import SearchForm from "../../components/SearchForm/SearchForm"
 import { pokeSearch } from '../../services/api-calls'
+import Battle from '../../components/Battle/Battle'
 
 const PokeSearch = () => {
   const [pokes, setPokes] = useState([])
 
   const handlePokeSearch = async formData => {
     const pokeResults = await pokeSearch(formData)
-    console.log(formData)
-    setPokes(pokeResults)
     console.log(pokeResults)
-    console.log(setPokes)
-
+    setPokes(pokeResults)
   }
   return (
     <>
@@ -29,18 +27,7 @@ const PokeSearch = () => {
         {pokes.stats?.map(stat =>
           <li>{stat.stat.name} & {stat.base_stat} </li>)}
       </>
-
-
-
-
-
-
-
-
-
-
-
-
+      <Battle pokes={pokes} ></Battle>
     </>
   );
 }
