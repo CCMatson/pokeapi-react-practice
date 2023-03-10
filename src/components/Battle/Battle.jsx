@@ -5,10 +5,21 @@ import { getPokemon } from '../../services/api-calls'
 const Battle = (props) => {
   const playerChoiceName = props.pokes.name
   const playerChoiceId = props.pokes.id
-  const playerTwo = (playerChoiceId - 2)
-  const playerThree = (playerChoiceId + 2)
-  console.log(playerTwo, 'playerTwo')
-  console.log(playerThree, 'playerThree')
+  // const playerTwo = (playerChoiceId - 2)
+  // const playerThree = (playerChoiceId + 2)
+
+let two = Math.floor(Math.random() * 1000) +1
+while (two === playerChoiceId) {
+  two = Math.floor(Math.random() * 1000) +1
+}
+
+let three = Math.floor(Math.random() * 1000) + 1;
+while (two === playerChoiceId || three === two) {
+  three = Math.floor(Math.random() * 1000) + 1;
+}
+
+  console.log(two, 'two')
+  console.log(three, 'three')
   console.log(typeof playerChoiceId, 'idType')
   console.log(props, 'props')
   console.log(playerChoiceName, 'playerChoice')
@@ -22,8 +33,8 @@ const Battle = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       const ash = await getPokemon(playerChoiceId)
-      const misty = await getPokemon(playerTwo)
-      const brock = await getPokemon(playerThree)
+      const misty = await getPokemon(two)
+      const brock = await getPokemon(three)
 
       setAshPokemon(ash)
       setMistyPokemon(misty)
@@ -57,6 +68,7 @@ const Battle = (props) => {
       <div className="pokemon">
         {ashPokemon && (
           <div>
+            <h2>Ash's pokemon</h2>
             <h2>{ashPokemon.name}</h2>
             <img src={ashPokemon.sprites.front_default} alt={ashPokemon.name} />
             {winner === 'Ash' && <p>Winner!</p>}
@@ -66,6 +78,7 @@ const Battle = (props) => {
       <div className="pokemon">
         {mistyPokemon && (
           <div>
+            <h2>Misty's pokemon</h2>
             <h2>{mistyPokemon.name}</h2>
             <img src={mistyPokemon.sprites.front_default} alt={mistyPokemon.name} />
             {winner === 'Misty' && <p>Winner!</p>}
@@ -73,6 +86,7 @@ const Battle = (props) => {
         )}
       </div>
       <div className="pokemon">
+        <h4>Brock's pokemon</h4>
         {brockPokemon && (
           <div>
             <h2>{brockPokemon.name}</h2>
