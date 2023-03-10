@@ -21,6 +21,7 @@ const PokeList = () => {
     <section className="container">
       <h1>Gotta catch them all!</h1>
    {/* ADD ROUTE AND BUTTON */}
+   <Link to="/random" pokeList={pokeList}>Link</Link>
       <h1>Get a Random Pokemon<RandomPokemon props={pokeList}/></h1>
       <h3>This is a list of 100 pokemon</h3>
       {pokeList.length ?
