@@ -20,7 +20,7 @@ const PokeDetails = () => {
   if (!pokePage) return <p>Loading...</p>
   return (
     <>
-      <h1>Get to know this Pokemon</h1>
+      <h1>Get to know {pokePage.name}</h1>
       <section>
         <div className="pokeCard">
           <div className="background">
@@ -37,10 +37,10 @@ const PokeDetails = () => {
           </div>
           <>
           </>
-          <Link to='/' className="return">Return to the Pokemon List Page</Link>
+          <Link to='/list' className="return">Go back to the Pokemon List Page</Link>
           
           <div className="stats">
-            <h4>Stats:</h4>
+            <h4>{pokePage.name}'s stats:</h4>
             {pokePage.stats?.map(stat =>
               <li>{stat.stat.name} @ {stat.base_stat} </li>)}
           </div>

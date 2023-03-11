@@ -4,7 +4,7 @@ const SearchForm = (props) => {
   const [formData, setFormData] = useState({query: ''})
 
   const handleChange = evt => {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+    setFormData({ ...formData, [evt.target.name]: evt.target.value.toLowerCase() })
   }
 
   const handleSubmit = evt => {
@@ -20,7 +20,7 @@ const SearchForm = (props) => {
           type="text" 
           autoComplete="off"
           onChange={handleChange}/>
-          <button type="submit">Search</button>
+          <button type="submit">Get your pokemon</button>
         </form>
       </div>
     </>

@@ -17,32 +17,29 @@ const PokeList = () => {
 
   return (
     <>
-  
-
-      <h1>Gotta catch them all!</h1>
-      <h3>This is a list of 100 pokemon</h3>
-    <section className="container">
-      {pokeList.length ?
-        <>
-          {pokeList.map(poke =>
-            <div key={poke.url} >
-
-              <Link to='/details' state={{ poke }} className="links">
-                {poke.name}
-                {poke.id}
-              </Link>
-            </div>
+      <h1>Gotta catch 'em all! This is a list of 100 pokemon</h1>
+      <h2>Click on the names to see Pokemon details</h2>
+      <section className="container">
+        {pokeList.length ?
+          <>
+            {pokeList.map(poke =>
+              <div key={poke.url} >
+                <Link to='/details' state={{ poke }} className="links">
+                  <li> {poke.name}
+                  </li>
+                </Link>
+              </div>
 
 
-          )}
-        </>
-        :
-        <>
-          <h4>Pokemon are loading</h4>
-        </>
-      }
+            )}
+          </>
+          :
+          <>
+            <h4>Pokemon are loading</h4>
+          </>
+        }
 
-    </section>
+      </section>
 
 
     </>

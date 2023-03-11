@@ -16,9 +16,9 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path="/" element={<PokeList />}/>
+        <Route path="/list" element={<PokeList />}/>
         <Route path="/details" element={<PokeDetails />}/>
-        <Route path="/poke-search" element={<PokeSearch />}/>
+        <Route path="/" element={<PokeSearch />}/>
         <Route path="/catch-em" element={<CapturePoke />}/>
         <Route path="/random" element={<GetRandom />}/>
         <Route path="/battle" element={<Battle />}/>

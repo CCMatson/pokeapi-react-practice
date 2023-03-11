@@ -66,6 +66,7 @@ while (two === playerChoiceId || three === two) {
       <div className='headlines'>
       <h1>Welcome to the Battle!</h1>
     <h1>It's Ash vs. Misty vs. Brock</h1>
+ 
       </div>
     <div className="battlefield">
       <div className="pokemon">
