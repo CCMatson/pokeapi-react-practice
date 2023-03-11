@@ -2,7 +2,7 @@
 
 # [Click this link to play](https://pokeapi-game.netlify.app/)
 
-<a href="https://imgur.com/C0tfS5P"><img src="https://i.imgur.com/C0tfS5P.png" title="source: imgur.com" /></a>
+<img src="https://i.imgur.com/C0tfS5P.png" title="source: imgur.com" />
 
 ## About
 #### This React app uses data from a RESTful API interface. Users can choose a pokemon and battle against two computer generated opponents. Users can review a comprehensive list of pokemon, and learn specific details about their game play.
