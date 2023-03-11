@@ -12,33 +12,30 @@ const PokeSearch = () => {
     console.log(pokeResults)
     setPokes(pokeResults)
   }
+
+  if (!pokes) return
   return (
     <>
-      <div className='battle-container'>
-    
-          <h1>Hi Ash, welcome to the Pokemon battle!</h1>
-          <h1>Enter the name of a pokemon ,then hit the button to start your battle.</h1>
-        <div className='battle-intro'>
-            <h2>Try "pikachu" to start</h2>
-        <SearchForm handlePokeSearch={handlePokeSearch} />
-          </div>
-        </div>
-        <div className='pokedex'>
-          <h1>Spelling counts! Use this link to review Pokemon :
-          </h1>
-          <div>
-          <Link to="/list" className='pokedex-link'> Pokedex <img src="https://i.imgur.com/8XcJZrZ.png" alt="" /></Link>
-          </div>
-        </div>
-          <div className='cta'>
-          <h1>The computer will generate random pokemon for Misty and Brock. The winner will be declared based on each pokemon's base experience.</h1>
-        <>
-          <h1>Your choice? {pokes.name}! </h1>
-          <img src={pokes.sprites?.front_default} alt="" />
-      
-        </>
-        <Battle pokes={pokes} ></Battle>
+      <h1 className='welcome'>Hi Ash, welcome to the Pokemon battle!</h1>
+      <div>
       </div>
+      <div className='battle-container'>
+        <h1>Enter the name of a pokemon then hit the button to start your battle.</h1>
+        <div className='battle-form'>
+          <SearchForm handlePokeSearch={handlePokeSearch} />
+        </div>
+      </div>
+      <div className='pokedex-container'>
+        <div className='cta'>
+          <h1>The computer will generate random pokemon for Misty and Brock. The winner will be declared based on each pokemon's base experience.</h1>
+        </div>
+      </div>
+      <>
+        <h1>Your choice? {pokes.name}! </h1>
+        <img src={pokes.sprites?.front_default} alt="" />
+
+      </>
+      <Battle pokes={pokes} ></Battle>
     </>
   );
 }

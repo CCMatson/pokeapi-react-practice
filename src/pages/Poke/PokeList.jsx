@@ -17,6 +17,7 @@ const PokeList = () => {
 
   return (
     <>
+    <h1 className='welcome'>Pokedex</h1>
       <h1>Gotta catch 'em all! This is a list of 100 pokemon</h1>
       <h2>Click on the names to see Pokemon details</h2>
       <section className="container">

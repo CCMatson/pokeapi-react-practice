@@ -10,6 +10,7 @@ const SearchForm = (props) => {
   const handleSubmit = evt => {
     evt.preventDefault()
     props.handlePokeSearch(formData)
+    // setFormData({query: ''})
   }
 
   return (
@@ -19,8 +20,9 @@ const SearchForm = (props) => {
           <input name="query" 
           type="text" 
           autoComplete="off"
+          placeholder="Try pikachu first"
           onChange={handleChange}/>
-          <button type="submit">Start your battle!</button>
+          <button className="button" type="submit">Start your battle!</button>
         </form>
       </div>
     </>

@@ -20,7 +20,7 @@ const PokeDetails = () => {
   if (!pokePage) return <p>Loading...</p>
   return (
     <>
-      <h1>Get to know {pokePage.name}</h1>
+      <h1 className="welcome">Get to know {pokePage.name}</h1>
       <section>
         <div className="pokeCard">
           <div className="background">

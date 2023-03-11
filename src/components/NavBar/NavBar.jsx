@@ -3,8 +3,16 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <header className="NavBar">
-      <Link to="/list" id="link">PokeList</Link>
-      <Link to="/" id="link"><img src="https://i.imgur.com/UhMEwil.png" alt="" /> Battle!</Link>
+
+      <Link to="/list" id="link">
+      Pokedex
+        <img src="https://i.imgur.com/8XcJZrZ.png" alt="pokeball" />
+      </Link>
+
+      <Link to="/" id="link">
+        Battle!
+        <img src="https://i.imgur.com/UhMEwil.png" alt="pikachu" />       
+        </Link>
     </header>
   );
 };
