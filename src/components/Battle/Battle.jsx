@@ -63,35 +63,38 @@ while (two === playerChoiceId || three === two) {
 
   return (
     <div>
-    <h1>Ash vs. Misty vs. Brock</h1>
+      <div className='headlines'>
+      <h1>Welcome to the Battle!</h1>
+    <h1>It's Ash vs. Misty vs. Brock</h1>
+      </div>
     <div className="battlefield">
       <div className="pokemon">
         {ashPokemon && (
           <div>
-            <h2>Ash's pokemon</h2>
+            {winner === 'Ash' && <p>Winner!</p>}
+            <h2>Ash's pokemon is</h2>
             <h2>{ashPokemon.name}</h2>
             <img src={ashPokemon.sprites.front_default} alt={ashPokemon.name} />
-            {winner === 'Ash' && <p>Winner!</p>}
           </div>
         )}
       </div>
       <div className="pokemon">
         {mistyPokemon && (
           <div>
-            <h2>Misty's pokemon</h2>
+            {winner === 'Misty' && <p>Winner!</p>}
+            <h2>Misty's pokemon is</h2>
             <h2>{mistyPokemon.name}</h2>
             <img src={mistyPokemon.sprites.front_default} alt={mistyPokemon.name} />
-            {winner === 'Misty' && <p>Winner!</p>}
           </div>
         )}
       </div>
       <div className="pokemon">
-        <h4>Brock's pokemon</h4>
         {brockPokemon && (
           <div>
+            {winner === 'Brock' && <p>Winner!</p>}
+            <h2>Brock's pokemon is</h2>
             <h2>{brockPokemon.name}</h2>
             <img src={brockPokemon.sprites.front_default} alt={brockPokemon.name} />
-            {winner === 'Brock' && <p>Winner!</p>}
           </div>
         )}
       </div>
