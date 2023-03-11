@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { getPokemonList } from '../../services/api-calls'
 import { Link } from 'react-router-dom'
-import RandomPokemon from '../GetRandom/GetRandom'
+
 
 const PokeList = () => {
   const [pokeList, setPokeList] = useState([])
@@ -11,31 +11,29 @@ const PokeList = () => {
     const fetchPokemonList = async () => {
       const pokeData = await getPokemonList()
       setPokeList(pokeData.results)
-      console.log(pokeData.results)
     }
     fetchPokemonList()
   }, [])
 
   return (
+    <>
+  
 
-    <section className="container">
       <h1>Gotta catch them all!</h1>
-   {/* ADD ROUTE AND BUTTON */}
-   <Link to="/random" pokeList={pokeList}>Link</Link>
-      <h1>Get a Random Pokemon<RandomPokemon props={pokeList}/></h1>
       <h3>This is a list of 100 pokemon</h3>
+    <section className="container">
       {pokeList.length ?
         <>
           {pokeList.map(poke =>
             <div key={poke.url} >
 
-              <Link to='/details' state={{poke}} className="links"> 
-              {poke.name}
-              {poke.id}
+              <Link to='/details' state={{ poke }} className="links">
+                {poke.name}
+                {poke.id}
               </Link>
             </div>
 
-            
+
           )}
         </>
         :
@@ -45,9 +43,9 @@ const PokeList = () => {
       }
 
     </section>
-  
 
 
+    </>
   );
 }
 
