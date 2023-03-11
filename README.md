@@ -11,8 +11,9 @@
 * CSS
 
 ## Icebox:
-* Bootstrap the CSS
+* Bootstrap the CSS to include mobile and responsive design
 * Add ability for user to "catch" and release" pokemon
+
 
 #### Attributions
 <a href="https://www.flaticon.com/free-icons/pokemon" title="pokemon icons">Pokemon icons created by Those Icons - Flaticon</a>

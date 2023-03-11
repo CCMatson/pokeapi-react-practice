@@ -3,19 +3,19 @@ import { getPokemon } from '../../services/api-calls'
 
 
 const Battle = (props) => {
-  const playerChoiceName = props.pokes.name
+  // const playerChoiceName = props.pokes.name
   const playerChoiceId = props.pokes.id
   // const playerTwo = (playerChoiceId - 2)
   // const playerThree = (playerChoiceId + 2)
 
-let two = Math.floor(Math.random() * 1000) +1
-while (two === playerChoiceId) {
-  two = Math.floor(Math.random() * 1000) +1
+let playerTwo = Math.floor(Math.random() * 1000) +1
+while (playerTwo === playerChoiceId) {
+  playerTwo = Math.floor(Math.random() * 1000) +1
 }
 
-let three = Math.floor(Math.random() * 1000) + 1;
-while (two === playerChoiceId || three === two) {
-  three = Math.floor(Math.random() * 1000) + 1;
+let playerThree = Math.floor(Math.random() * 1000) + 1;
+while (playerTwo === playerChoiceId || playerThree === playerTwo) {
+  playerThree = Math.floor(Math.random() * 1000) + 1;
 }
 
 
@@ -27,8 +27,8 @@ while (two === playerChoiceId || three === two) {
   useEffect(() => {
     const fetchData = async () => {
       const ash = await getPokemon(playerChoiceId)
-      const misty = await getPokemon(two)
-      const brock = await getPokemon(three)
+      const misty = await getPokemon(playerTwo)
+      const brock = await getPokemon(playerThree)
 
       setAshPokemon(ash)
       setMistyPokemon(misty)

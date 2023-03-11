@@ -29,8 +29,6 @@ const PokeList = () => {
                   </li>
                 </Link>
               </div>
-
-
             )}
           </>
           :
@@ -38,10 +36,7 @@ const PokeList = () => {
             <h4>Pokemon are loading</h4>
           </>
         }
-
       </section>
-
-
     </>
   );
 }
