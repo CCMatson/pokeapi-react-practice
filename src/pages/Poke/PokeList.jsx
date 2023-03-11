@@ -17,7 +17,10 @@ const PokeList = () => {
 
   return (
     <>
-    <h1 className='welcome'>Pokedex</h1>
+    <h1 className='welcome'>Pokedex 
+    <img src="https://i.imgur.com/vTP6mW0.png" alt="jigglypuff" />
+    <img src="https://i.imgur.com/WCnwWkr.png" alt="meowth" />
+    </h1>
       <h1>Gotta catch 'em all! This is a list of 100 pokemon</h1>
       <h2>Click on the names to see Pokemon details</h2>
       <section className="container">

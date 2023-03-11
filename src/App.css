@@ -122,8 +122,8 @@ section {
 }
 
 .background img {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
 }
 
 
@@ -173,7 +173,7 @@ section {
   -webkit-user-select: none;
   touch-action: manipulation;
   background-color: #ffde00;
-  margin: 40px 0px 20px 0px;
+  margin: 60px 0px 20px 0px;
 }
 
 .return :active {
@@ -223,9 +223,6 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* justify-content: flex-start; */
-  /* align-items: center; */
-  /* width: 100%; */
 }
 
 .pokedex-container{
@@ -239,15 +236,11 @@ section {
   font-family: 'Press Start 2P', cursive;
 }
 
-.pokedex-button{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.welcome img {
+  width: 50px;
+  margin: 0px 10px 0px 10px;
 }
 
-.pokedex-button img{
-  width: 25px; 
-}
 
 
 
@@ -269,9 +262,6 @@ background-color: #fff;
   justify-content: center;
   align-items: center;
   background-color: #fff;
-
-  /* margin: 0px 100px 0px 100px;
-  padding: 20px; */
 }
 
 .cta img {
@@ -292,6 +282,7 @@ background-color: #fff;
   padding: 10px;
   margin: 20px;
   background-color: #fff;
+  border: #3b4cca solid .05px;
 
 }
 
@@ -301,12 +292,6 @@ background-color: #fff;
   font-style: italic;
 }
 
-
-.battle-form{
-  margin: 5px;
-  display: flex;
-  flex-direction: column;
-}
 
 form {
   background-color: #fff;
