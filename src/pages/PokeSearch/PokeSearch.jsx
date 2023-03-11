@@ -17,9 +17,9 @@ const PokeSearch = () => {
       <div className='battle-container'>
     
           <h1>Hi Ash, welcome to the Pokemon battle!</h1>
-          <h1>Write the name of the pokemon you want to play with today.</h1>
+          <h1>Enter the name of a pokemon ,then hit the button to start your battle.</h1>
         <div className='battle-intro'>
-            <h2>Try "pikachu" to get started</h2>
+            <h2>Try "pikachu" to start</h2>
         <SearchForm handlePokeSearch={handlePokeSearch} />
           </div>
         </div>

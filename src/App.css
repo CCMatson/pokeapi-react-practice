@@ -50,6 +50,10 @@ header {
   border-radius: 5px;
 }
 
+h1 {
+  font-size: 24px;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -159,14 +163,32 @@ section {
   border-radius: 10px;
   height: 24px;
   font-size: 16px;
+
+    background-color: #3b4cca;
+    color: #fff;
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    justify-content: space-evenly;
+    text-decoration: none;
+    font-size: 24px;
+    align-items: center;
+
 }
 
 .return:hover {
-  background-color: #ffcb05;
+  background-color: #fff;
   color: black;
   border: 1px black solid;
   margin: 50px 0 25px 0;
   padding: 5px;
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
+  justify-content: space-evenly;
+  text-decoration: none;
+  font-size: 24px;
+  align-items: center;
 }
 
 .stats {
@@ -210,7 +232,7 @@ section {
 }
 
 .pokedex-link img {
-  width: 50px;
+  width: 40px;
 }
 
 .pokedex-link:hover {
@@ -233,6 +255,7 @@ section {
 .headlines {
   background-color: #ffcb05;
   border-radius: 10px;
+  padding: 5px;
 }
 
 .cta {
@@ -246,7 +269,7 @@ section {
 }
 
 .cta img {
-  width: 200px;
+  width: 100px;
 }
 
 .battlefield {

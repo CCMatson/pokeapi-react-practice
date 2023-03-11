@@ -37,7 +37,7 @@ const PokeDetails = () => {
           </div>
           <>
           </>
-          <Link to='/list' className="return">Go back to the Pokemon List Page</Link>
+          <Link to='/list' className="return">Back to the Pokedex</Link>
           
           <div className="stats">
             <h4>{pokePage.name}'s stats:</h4>

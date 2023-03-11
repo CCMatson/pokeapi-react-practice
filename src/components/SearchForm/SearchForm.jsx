@@ -20,7 +20,7 @@ const SearchForm = (props) => {
           type="text" 
           autoComplete="off"
           onChange={handleChange}/>
-          <button type="submit">Get your pokemon</button>
+          <button type="submit">Start your battle!</button>
         </form>
       </div>
     </>
