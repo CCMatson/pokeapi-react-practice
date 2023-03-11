@@ -24,20 +24,16 @@ const PokeSearch = () => {
           </div>
         </div>
         <div className='pokedex'>
-          <h2>Spelling counts! Use this link to review Pokemon :
-          </h2>
+          <h1>Spelling counts! Use this link to review Pokemon :
+          </h1>
           <div>
           <Link to="/list" className='pokedex-link'> Pokedex <img src="https://i.imgur.com/8XcJZrZ.png" alt="" /></Link>
           </div>
-
-
         </div>
-
           <div className='cta'>
           <h2>The computer will generate random pokemon for Misty and Brock. The winner will be declared based on each pokemon's base experience.</h2>
-
         <>
-          <h1>You choose: {pokes.name}</h1>
+          <h1>Your choice? {pokes.name}! </h1>
           <img src={pokes.sprites?.front_default} alt="" />
       
         </>

@@ -18,12 +18,6 @@ while (two === playerChoiceId || three === two) {
   three = Math.floor(Math.random() * 1000) + 1;
 }
 
-  console.log(two, 'two')
-  console.log(three, 'three')
-  console.log(typeof playerChoiceId, 'idType')
-  console.log(props, 'props')
-  console.log(playerChoiceName, 'playerChoice')
-  console.log(playerChoiceId, 'playerChoiceId')
 
   const [ashPokemon, setAshPokemon] = useState(null)
   const [mistyPokemon, setMistyPokemon] = useState(null)

@@ -29,7 +29,6 @@ const PokeDetails = () => {
           </div>
           <div className="content">
             <p className="name">{pokePage.name}</p>
-
             <p>Height: {pokePage.height}</p>
             <p>Weight: {pokePage.weight}</p>
             <p>Base experience: {pokePage.base_experience}</p>
@@ -40,7 +39,7 @@ const PokeDetails = () => {
           <Link to='/list' className="return">Back to the Pokedex</Link>
           
           <div className="stats">
-            <h4>{pokePage.name}'s stats:</h4>
+            <p>{pokePage.name}'s stats:</p>
             {pokePage.stats?.map(stat =>
               <li>{stat.stat.name} @ {stat.base_stat} </li>)}
           </div>
