@@ -270,8 +270,9 @@ section {
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  margin: 0px 100px 0px 100px;
-  padding: 20px;
+  width: 700px;
+  /* margin: 0px 100px 0px 100px;
+  padding: 20px; */
 }
 
 .cta img {

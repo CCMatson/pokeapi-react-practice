@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect , useCallback} from 'react'
 import { getPokemon } from '../../services/api-calls'
 
 
 const Battle = (props) => {
-  // const playerChoiceName = props.pokes.name
   const playerChoiceId = props.pokes.id
-  // const playerTwo = (playerChoiceId - 2)
-  // const playerThree = (playerChoiceId + 2)
 
 let playerTwo = Math.floor(Math.random() * 1000) +1
 while (playerTwo === playerChoiceId) {
@@ -18,25 +15,49 @@ while (playerTwo === playerChoiceId || playerThree === playerTwo) {
   playerThree = Math.floor(Math.random() * 1000) + 1;
 }
 
-
   const [ashPokemon, setAshPokemon] = useState(null)
   const [mistyPokemon, setMistyPokemon] = useState(null)
   const [brockPokemon, setBrockPokemon] = useState(null)
   const [winner, setWinner] = useState(null)
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const ash = await getPokemon(playerChoiceId)
-      const misty = await getPokemon(playerTwo)
-      const brock = await getPokemon(playerThree)
 
-      setAshPokemon(ash)
-      setMistyPokemon(misty)
-      setBrockPokemon(brock)
-    }
+
+    const fetchData = useCallback(async() => {
+      try {
+        const ash = await getPokemon(playerChoiceId)
+        const misty = await getPokemon(playerTwo)
+        const brock = await getPokemon(playerThree)
+    
+        setAshPokemon(ash)
+        setMistyPokemon(misty)
+        setBrockPokemon(brock)
+
+      } catch (error){
+        console.log(error)
+      }
     fetchData()
-  }, [playerChoiceId])
+  }, [playerChoiceId, playerTwo, playerThree])
 
+  useEffect(() => {
+    if (!playerChoiceId) return
+    fetchData()
+  }, [playerChoiceId, fetchData])
+
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     if (!playerChoiceId) return "loading"
+  //     const ash = await getPokemon(playerChoiceId)
+  //     const misty = await getPokemon(playerTwo)
+  //     const brock = await getPokemon(playerThree)
+  
+  //     setAshPokemon(ash)
+  //     setMistyPokemon(misty)
+  //     setBrockPokemon(brock)
+  //   }
+  //   fetchData()
+  // }, [playerChoiceId])
+  
   useEffect(() => {
     if (ashPokemon && mistyPokemon && brockPokemon) {
       const ashDamage = Math.floor(Math.random() * ashPokemon.base_experience);
@@ -60,7 +81,6 @@ while (playerTwo === playerChoiceId || playerThree === playerTwo) {
       <div className='headlines'>
       <h1>Welcome to the Battle!</h1>
     <h1>It's Ash vs. Misty vs. Brock</h1>
- 
       </div>
     <div className="battlefield">
       <div className="pokemon">
