@@ -1,4 +1,4 @@
-import React, { useState, useEffect , useCallback} from 'react'
+import React, { useState, useEffect } from 'react'
 import { getPokemon } from '../../services/api-calls'
 
 
@@ -22,41 +22,41 @@ while (playerTwo === playerChoiceId || playerThree === playerTwo) {
 
 
 
-    const fetchData = useCallback(async() => {
-      try {
-        const ash = await getPokemon(playerChoiceId)
-        const misty = await getPokemon(playerTwo)
-        const brock = await getPokemon(playerThree)
+  //   const fetchData = useCallback(async() => {
+  //     try {
+  //       const ash = await getPokemon(playerChoiceId)
+  //       const misty = await getPokemon(playerTwo)
+  //       const brock = await getPokemon(playerThree)
     
-        setAshPokemon(ash)
-        setMistyPokemon(misty)
-        setBrockPokemon(brock)
+  //       setAshPokemon(ash)
+  //       setMistyPokemon(misty)
+  //       setBrockPokemon(brock)
 
-      } catch (error){
-        console.log(error)
-      }
-    fetchData()
-  }, [playerChoiceId, playerTwo, playerThree])
-
-  useEffect(() => {
-    if (!playerChoiceId) return
-    fetchData()
-  }, [playerChoiceId, fetchData])
-
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     if (!playerChoiceId) return "loading"
-  //     const ash = await getPokemon(playerChoiceId)
-  //     const misty = await getPokemon(playerTwo)
-  //     const brock = await getPokemon(playerThree)
-  
-  //     setAshPokemon(ash)
-  //     setMistyPokemon(misty)
-  //     setBrockPokemon(brock)
-  //   }
+  //     } catch (error){
+  //       console.log(error)
+  //     }
   //   fetchData()
   // }, [playerChoiceId])
+
+  // useEffect(() => {
+  //   if (!playerChoiceId) return
+  //   fetchData()
+  // }, [playerChoiceId])
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!playerChoiceId) return 
+      const ash = await getPokemon(playerChoiceId)
+      const misty = await getPokemon(playerTwo)
+      const brock = await getPokemon(playerThree)
+  
+      setAshPokemon(ash)
+      setMistyPokemon(misty)
+      setBrockPokemon(brock)
+    }
+    fetchData()
+  }, [playerChoiceId])
   
   useEffect(() => {
     if (ashPokemon && mistyPokemon && brockPokemon) {
