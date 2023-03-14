@@ -12,47 +12,55 @@ const PokeDetails = () => {
     const fetchDetails = async () => {
       const pokeData = await getDetails(location.state.poke.url)
       setPokePage(pokeData)
-      console.log(pokeData, 'poke card data')
     }
     fetchDetails()
   }, [location.state.poke.url])
 
   if (!pokePage) return <p>Loading...</p>
+
+  const { sprites, name, height, weight, base_experience,species , stats ,moves } = pokePage;
+
   return (
     <>
-      <h1 className="welcome">Get to know {pokePage.name}</h1>
+      <h1 className="welcome">Get to know {name}</h1>
       <section>
         <div className="pokeCard">
           <div className="background">
-            <img src={pokePage.sprites?.front_default} alt="" />
-            <img src={pokePage.sprites?.back_default} alt="" />
+            <img src={sprites && sprites.front_default} alt="" />
+            <img src={sprites && sprites.back_default} alt="" />
           </div>
           <div className="content">
-            <p className="name">{pokePage.name}</p>
-            <p>Height: {pokePage.height}</p>
-            <p>Weight: {pokePage.weight}</p>
-            <p>Base experience: {pokePage.base_experience}</p>
-            <p>Species: {pokePage.species?.name}</p>
+            <p className="name">{name}</p>
+            <p>Height: {height}</p>
+            <p>Weight: {weight}</p>
+            <p>Base experience: {base_experience}</p>
+            {species && <p>Species: {species.name}</p>}
           </div>
           <>
           </>
           <Link to='/list' className="return">Back to the Pokedex</Link>
           
+          { stats && (
           <div className="stats">
-            <p>{pokePage.name}'s stats:</p>
-            {pokePage.stats?.map(stat =>
+            <p>{name}'s stats:</p>
+            {stats.map(stat =>
               <li>{stat.stat.name} @ {stat.base_stat} </li>)}
           </div>
+          )}
         </div>
+        {moves && (
         <div className="bonus-content">
-          <p className="name">{pokePage.name}'s moves</p>
+          <p className="name">{name}'s moves</p>
           <div className="moves">
-            {pokePage.moves?.map(move =>
+            {moves.map(move =>
               <li>{move.move.name} / </li>
             )}
           </div>
 
         </div>
+
+
+        )}
       </section>
     </>
   )
