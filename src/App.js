@@ -7,6 +7,7 @@ import PokeSearch from './pages/PokeSearch/PokeSearch';
 // import CapturePoke from './components/CapturePoke/CapturePoke';
 // import GetRandom from './pages/GetRandom/GetRandom'
 import Battle from './components/Battle/Battle';
+import BerryList from './pages/Berries/Berries';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/list" element={<PokeList />}/>
         <Route path="/details" element={<PokeDetails />}/>
         <Route path="/" element={<PokeSearch />}/>
+        <Route path="/berries" element={<BerryList />}/>
         {/* <Route path="/catch-em" element={<CapturePoke />}/> */}
         {/* <Route path="/random" element={<GetRandom />}/> */}
         <Route path="/battle" element={<Battle />}/>

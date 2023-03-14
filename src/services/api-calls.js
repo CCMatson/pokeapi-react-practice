@@ -19,3 +19,8 @@ export async function getPokemon(id) {
   const res = await fetch(`${baseUrl}/pokemon/${id}`);
   return res.json()
 }
+
+export async function getBerryList(){
+  const res = await fetch(`${baseUrl}/berry/`)
+  return res.json()
+}
