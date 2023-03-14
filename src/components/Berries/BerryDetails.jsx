@@ -20,6 +20,10 @@ const BerryDetails = () => {
       <h4>Name: {berryDetails.name}</h4>
       <li>Growth Time: {berryDetails.growth_time}</li>
       <li>Smoothness: {berryDetails.smoothness}</li>
+      {berryDetails.natural_gift_type && (
+        <li>{berryDetails.natural_gift_type.name}</li>
+      )}
+
       <h4>Flavors:</h4>
       {berryDetails.flavors?.map(flavor =>
       <div key={berryDetails.url}>

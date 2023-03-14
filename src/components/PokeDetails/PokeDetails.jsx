@@ -24,8 +24,8 @@ const PokeDetails = () => {
       <section>
         <div className="pokeCard">
           <div className="background">
-            <img src={pokePage.sprites?.front_default} alt="" />
-            <img src={pokePage.sprites?.back_default} alt="" />
+            <img src={pokePage.sprites && pokePage.sprites.front_default} alt="" />
+            <img src={pokePage.sprites && pokePage.sprites.back_default} alt="" />
           </div>
           <div className="content">
             <p className="name">{pokePage.name}</p>
