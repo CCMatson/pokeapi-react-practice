@@ -24,3 +24,8 @@ export async function getBerryList(){
   const res = await fetch(`${baseUrl}/berry/`)
   return res.json()
 }
+
+export async function getBerryDetails(apiUrl) {
+  const res = await fetch(`${apiUrl}`)
+  return res.json()
+}
