@@ -21,40 +21,18 @@ while (playerTwo === playerChoiceId || playerThree === playerTwo) {
   const [winner, setWinner] = useState(null)
 
 
+  const fetchData = async () => {
+    if (!playerChoiceId) return 
+    const ash = await getPokemon(playerChoiceId)
+    const misty = await getPokemon(playerTwo)
+    const brock = await getPokemon(playerThree)
 
-  //   const fetchData = useCallback(async() => {
-  //     try {
-  //       const ash = await getPokemon(playerChoiceId)
-  //       const misty = await getPokemon(playerTwo)
-  //       const brock = await getPokemon(playerThree)
-    
-  //       setAshPokemon(ash)
-  //       setMistyPokemon(misty)
-  //       setBrockPokemon(brock)
-
-  //     } catch (error){
-  //       console.log(error)
-  //     }
-  //   fetchData()
-  // }, [playerChoiceId])
-
-  // useEffect(() => {
-  //   if (!playerChoiceId) return
-  //   fetchData()
-  // }, [playerChoiceId])
-
+    setAshPokemon(ash)
+    setMistyPokemon(misty)
+    setBrockPokemon(brock)
+  }
 
   useEffect(() => {
-    const fetchData = async () => {
-      if (!playerChoiceId) return 
-      const ash = await getPokemon(playerChoiceId)
-      const misty = await getPokemon(playerTwo)
-      const brock = await getPokemon(playerThree)
-  
-      setAshPokemon(ash)
-      setMistyPokemon(misty)
-      setBrockPokemon(brock)
-    }
     fetchData()
   }, [playerChoiceId])
   
@@ -82,12 +60,17 @@ while (playerTwo === playerChoiceId || playerThree === playerTwo) {
       <h1>Welcome to the Battle!</h1>
     <h1>It's Ash vs. Misty vs. Brock</h1>
       </div>
-    <div className="battlefield">
+
+    {(!ashPokemon) ? 
+  
+  <h1>To play, enter your Pokemon above</h1>
+  :
+  <div className="battlefield">
       <div className="pokemon">
         {ashPokemon && (
           <div>
             {winner === 'Ash' && <p>Winner!</p>}
-            <h2>Ash's pokemon is</h2>
+            <h2>Ash, your choice is</h2>
             <h2>{ashPokemon.name}</h2>
             <img src={ashPokemon.sprites.front_default} alt={ashPokemon.name} />
           </div>
@@ -114,6 +97,10 @@ while (playerTwo === playerChoiceId || playerThree === playerTwo) {
         )}
       </div>
     </div>
+  
+
+}
+
   </div>
 );
 };

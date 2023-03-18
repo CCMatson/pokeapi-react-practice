@@ -31,8 +31,8 @@ const PokeSearch = () => {
         </div>
       </div>
       <>
-        <h1>Your choice? {pokes.name}! </h1>
-        <img src={pokes.sprites?.front_default} alt="" />
+        {/* <h1>Your choice? {pokes.name}! </h1>
+        <img src={pokes.sprites?.front_default} alt="" /> */}
 
       </>
       <Battle pokes={pokes} ></Battle>

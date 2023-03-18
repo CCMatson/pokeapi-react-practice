@@ -10,8 +10,8 @@ const SearchForm = (props) => {
   const handleSubmit = evt => {
     evt.preventDefault()
     props.handlePokeSearch(formData)
-    // setFormData({query: ''})
   }
+
 
   return (
     <>

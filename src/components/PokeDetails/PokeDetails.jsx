@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { getDetails } from "../../services/api-calls";
-
-
 
 const PokeDetails = () => {
   const [pokePage, setPokePage] = useState({})
@@ -23,17 +21,19 @@ const PokeDetails = () => {
 
   return (
     <>
-      {/* {pokePage.length ? */}
         <>
           <h1 className="welcome">Get to know {name}</h1>
           <section>
+            <Suspense fallback={<h1>Loading...</h1>}>
             <div className="pokeCard">
+            <Suspense fallback={<h1>Loading...</h1>}>
               <div className="background">
                 <img src={sprites && sprites.front_default} alt="" />
                 <img src={sprites && sprites.back_default} alt="" />
               </div>
+              </Suspense>
               <div className="content">
-                <p className="name">{name}</p>
+                <p >{name}</p>
                 <p>Height: {height}</p>
                 <p>Weight: {weight}</p>
                 <p>Base experience: {base_experience}</p>
@@ -42,7 +42,6 @@ const PokeDetails = () => {
               <>
               </>
               <Link to='/list' className="return">Back to the Pokedex</Link>
-
               {stats && (
                 <div className="stats">
                   <p>{name}'s stats:</p>
@@ -51,6 +50,7 @@ const PokeDetails = () => {
                 </div>
               )}
             </div>
+            </Suspense>
             {moves && (
               <div className="bonus-content">
                 <p className="name">{name}'s moves</p>
@@ -63,9 +63,7 @@ const PokeDetails = () => {
             )}
           </section>
         </>
-        {/* : */}
-        <>
-          {/* <h1>Loading</h1> */}
+        <>   
         </>
       
     </>
