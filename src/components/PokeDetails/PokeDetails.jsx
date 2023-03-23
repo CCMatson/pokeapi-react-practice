@@ -6,6 +6,8 @@ const PokeDetails = () => {
   const [pokePage, setPokePage] = useState({})
   const location = useLocation()
 
+  const { sprites, name, height, weight, base_experience, species, stats, moves } = pokePage;
+
   useEffect(() => {
     const fetchDetails = async () => {
       const pokeData = await getDetails(location.state.poke.url)
@@ -13,11 +15,8 @@ const PokeDetails = () => {
     }
     fetchDetails()
   }, [location.state.poke.url])
-
-  if (!pokePage) return
-
-  const { sprites, name, height, weight, base_experience, species, stats, moves } = pokePage;
-
+  
+  if (!name) return
 
   return (
     <>
@@ -25,13 +24,12 @@ const PokeDetails = () => {
           <h1 className="welcome">Get to know {name}</h1>
           <section>
             <Suspense fallback={<h1>Loading...</h1>}>
-            <div className="pokeCard">
-            <Suspense fallback={<h1>Loading...</h1>}>
+            <div className="pokeCard">      
               <div className="background">
                 <img src={sprites && sprites.front_default} alt="" />
                 <img src={sprites && sprites.back_default} alt="" />
               </div>
-              </Suspense>
+          
               <div className="content">
                 <p >{name}</p>
                 <p>Height: {height}</p>
@@ -56,7 +54,7 @@ const PokeDetails = () => {
                 <p className="name">{name}'s moves</p>
                 <div className="moves">
                   {moves.map(move =>
-                    <li>{move.move.name} / </li>
+                    <li key={move.move.name}>{move.move.name} / </li>
                   )}
                 </div>
               </div>
