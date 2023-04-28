@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import BerryDetails from "../../components/Berries/BerryDetails";
+// import BerryDetails from "../../components/Berries/BerryDetails";
 import { getBerryList } from "../../services/api-calls";
 import { Link } from "react-router-dom";
 
